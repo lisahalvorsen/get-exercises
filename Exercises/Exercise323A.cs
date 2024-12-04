@@ -4,7 +4,7 @@ public class Exercise323A : IExercise
 {
     public void Run()
     {
-        var match = new Match();
+        var match = new Match("H");
 
         Console.Write("Gyldig tips: \n" +
                       " - H, U, B\n" +
@@ -28,8 +28,8 @@ public class Exercise323A : IExercise
             {
                 if (command == Command.X) break;
 
-                match.IncreasePoints(command);
-                Console.WriteLine($"Stillingen er {match.HomeGoals}-{match.AwayGoals}.");
+                match.AddGoal(command);
+                Console.WriteLine($"Stillingen er: {match.GetScore()} ⚽️");
             }
             else
             {
@@ -37,8 +37,7 @@ public class Exercise323A : IExercise
             }
         }
 
-        var result = match.GetMatchResult();
-        var isBetCorrect = match.IsBetCorrect(bet, result);
+        var isBetCorrect = match.IsBetCorrect();
 
         Console.WriteLine(isBetCorrect
             ? "Gratulerer, du tippet riktig 🥳"

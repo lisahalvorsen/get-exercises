@@ -2,33 +2,36 @@ namespace Exercises;
 
 public class Match
 {
-    public int HomeGoals { get; private set; } = 0;
-    public int AwayGoals { get; private set; } = 0;
-    private string Result { get; set; } = string.Empty;
+    private int HomeGoals { get; set; }
+    private int AwayGoals { get; set; }
+    private string Bet { get; set; }
 
-    public bool IncreasePoints(Command command)
+    public Match(string bet)
     {
-        switch (command)
+        Bet = bet;
+    }
+
+    public void AddGoal(Command team)
+    {
+        switch (team)
         {
             case Command.H:
                 HomeGoals++;
-                return true;
+                break;
             case Command.B:
                 AwayGoals++;
-                return true;
-            default:
-                return false;
+                break;
         }
     }
 
-    public string GetMatchResult()
+    public bool IsBetCorrect()
     {
-        Result = HomeGoals == AwayGoals ? "U" : HomeGoals > AwayGoals ? "H" : "B";
-        return Result;
+        var result = HomeGoals == AwayGoals ? "U" : HomeGoals > AwayGoals ? "H" : "B";
+        return Bet.Contains(result);
     }
 
-    public bool IsBetCorrect(string bet, string result)
+    public string GetScore()
     {
-        return bet.Contains(result);
+        return HomeGoals + "-" + AwayGoals;
     }
 }
