@@ -2,10 +2,38 @@ namespace Exercises;
 
 public class GameConsole
 {
-    public void Show()
+    private Board _board = new Board();
+
+    public GameConsole(Board board)
     {
-        Console.WriteLine("  a b c\n \u250c\u2500\u2500\u2500\u2500\u2500\u2510\n1\u2502o    " +
-                          "\u2502\n2\u2502    o\u2502\n3\u2502\u00d7 \u00d7  " +
-                          "\u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2518\n");
+        _board = board;
+    }
+
+    public void Show(Board board)
+    {
+        Console.WriteLine("   a   b   c"); 
+        Console.WriteLine(" ┌───┬───┬───┐");
+        
+        for (var row = 0; row < 3; row++)
+        {
+            Console.Write($"{row + 1}│");
+
+            for (var col = 0; col < 3; col++)
+            {
+                var squareValue = ' ';
+                Console.Write($" {squareValue} │");
+            }
+
+            Console.WriteLine();
+
+            if (row < 2)
+            {
+                Console.WriteLine(" ├───┼───┼───┤");
+            }
+            else
+            {
+                Console.WriteLine(" └───┴───┴───┘");
+            }
+        }
     }
 }
