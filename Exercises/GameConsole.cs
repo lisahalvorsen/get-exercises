@@ -20,20 +20,13 @@ public class GameConsole
 
             for (var col = 0; col < 3; col++)
             {
-                var squareValue = ' ';
-                Console.Write($" {squareValue} │");
+                var squareValue = board.GetSquare(row, col).Value;
+                var displayValue = squareValue == 0 ? ' ' : (squareValue == 1 ? 'X' : 'O');
+                Console.Write($" {displayValue} │");
             }
 
             Console.WriteLine();
-
-            if (row < 2)
-            {
-                Console.WriteLine(" ├───┼───┼───┤");
-            }
-            else
-            {
-                Console.WriteLine(" └───┴───┴───┘");
-            }
+            Console.WriteLine(row < 2 ? " ├───┼───┼───┤" : " └───┴───┴───┘");
         }
     }
 }

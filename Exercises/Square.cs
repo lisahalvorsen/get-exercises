@@ -2,28 +2,24 @@ namespace Exercises;
 
 public class Square
 {
-    public int _value { get; set; } // 0 = empty, 1 = player 1, 2 = player 2
+    public int Value { get; set; } // 0 = empty, 1 = player 1, 2 = player 2
+   
 
-    public Square()
+    public bool IsEmptySquare()
     {
-        _value = 0;
-    }
-
-    private bool IsEmptySquare()
-    {
-        return _value == 0;
+        return Value == 0;
     }
 
     public bool PlayerOnePresent()
     {
-        return _value == 1;
+        return Value == 1;
     }
 
     public bool ClaimSquare(bool player)
     {
         if (IsEmptySquare())
         {
-            _value = player ? 1 : 2; // if player = true, _value = 1, if player = false, _value = 2 
+            Value = player ? 1 : 2; // if player = true, _value = 1, if player = false, _value = 2 
             return true;
         }
 
