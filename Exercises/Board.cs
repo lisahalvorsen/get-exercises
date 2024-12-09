@@ -4,6 +4,7 @@ public class Board
 {
     private readonly Square[] _squares;
     private bool _isPlayerOne { get; set; } = true; // true = player 1, false = player 2
+    public Random _random  { get; set; } = new Random();
     public bool IsPlayerOne => _isPlayerOne;
 
     public Board()
@@ -44,11 +45,11 @@ public class Board
         return false;
     }
 
-    private int SwitchPlayers()
+    public int SwitchPlayers()
     {
         return _isPlayerOne ? 1 : 2;
     }
-    
+
     public Square GetSquare(int row, int col)
     {
         var index = row * 3 + col;
@@ -84,10 +85,16 @@ public class Board
                 _squares[a].Value == _squares[b].Value &&
                 _squares[b].Value == _squares[c].Value)
             {
-                return _squares[a].Value; 
+                return _squares[a].Value;
             }
         }
 
-        return 0; // No winner
+        return 0;
+    }
+
+    public bool MarkRandom(bool player)
+    {
+        var randomNumber = _random.Next(0, 2);
+        return randomNumber == 1;
     }
 }
