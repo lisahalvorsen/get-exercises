@@ -13,17 +13,16 @@ public class Exercise323C : IExercise
         Thread.Sleep(2000);
 
         var isPlayerOne = board.MarkRandom(false);
-        Console.WriteLine(isPlayerOne ? "Spiller 1 starter 🎮" : "Spiller 2 starter 🎮");
 
         while (true)
         {
+            Console.Clear();
             gameConsole.Show(board);
 
             Console.WriteLine("Skriv inn hvilken rute du vil sette et kryss i, f.eks. a2");
-            Console.WriteLine($"Spiller {(isPlayerOne ? "1" : "2")} sin tur!");
+            Console.WriteLine($"Spiller {(isPlayerOne ? "1" : "2")} ⭐️ sin tur ");
 
             var position = Console.ReadLine();
-            Console.Clear();
 
             try
             {
@@ -45,6 +44,7 @@ public class Exercise323C : IExercise
 
             if (winner != 0)
             {
+                Console.Clear();
                 Console.WriteLine($"Spiller {(board.IsPlayerOne ? "2" : "1")} har vunnet! 🎉");
                 gameConsole.Show(board);
                 break;
@@ -52,10 +52,19 @@ public class Exercise323C : IExercise
 
             if (board.IsDraw())
             {
+                Console.Clear();
                 Console.WriteLine("Det ble uavgjort! Spillet er over.");
                 gameConsole.Show(board);
                 break;
             }
         }
+        StartNewGame();
+    }
+
+    private void StartNewGame()
+    {
+        Console.WriteLine("Vil du spille på nytt? Tast j/n 🔄");
+        var startNewGame = Console.ReadLine()?.ToLower();
+        if (startNewGame == "j") Run();
     }
 }

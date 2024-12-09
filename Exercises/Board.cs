@@ -4,7 +4,7 @@ public class Board
 {
     private readonly Square[] _squares;
     private bool _isPlayerOne { get; set; } = true; // true = player 1, false = player 2
-    public Random _random  { get; set; } = new Random();
+    private Random _random  { get; set; } = new Random();
     public bool IsPlayerOne => _isPlayerOne;
 
     public Board()
@@ -45,7 +45,7 @@ public class Board
         return false;
     }
 
-    public int SwitchPlayers()
+    private int SwitchPlayers()
     {
         return _isPlayerOne ? 1 : 2;
     }
