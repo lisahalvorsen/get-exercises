@@ -2,8 +2,8 @@ namespace Exercise341A;
 
 public class MovableStar : IStar
 {
-    protected int _x;
-    protected int _y;
+    private int _x;
+    private int _y;
     private int _speedX;
     private int _speedY;
 
