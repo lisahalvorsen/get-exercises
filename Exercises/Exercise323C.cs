@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace Exercises;
 
-public class Exercise323C : IExercise
+public class Exercise323C
 {
     public void Run()
     {

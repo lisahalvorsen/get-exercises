@@ -1,6 +1,6 @@
 namespace Exercises;
 
-public class Exercise323A : IExercise
+public class Exercise323A 
 {
     public void Run()
     {

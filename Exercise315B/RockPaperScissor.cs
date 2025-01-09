@@ -1,15 +1,10 @@
-namespace Exercises;
+﻿using CommonInterfaces;
 
-public class Exercise315B : IExercise
+namespace Exercise315B;
+
+public class RockPaperScissor : IExercise
 {
     public void Run()
-    {
-        Console.WriteLine(
-            "Let's play 'Rock, Paper, Scissors'!\nTo play: type 'r', 'p' or 's'.\nTo exit the game at any point, type 'x'.");
-        PlayGame();
-    }
-
-    private void PlayGame()
     {
         var playerPoints = 0;
         var computerPoints = 0;
@@ -47,7 +42,7 @@ public class Exercise315B : IExercise
         }
     }
 
-    private int GetRandomNumber()
+    private static int GetRandomNumber()
     {
         var random = new Random();
         var randomNumber = random.Next(1, 4); // 1 = Rock, 2 = Paper, 3 = Scissors

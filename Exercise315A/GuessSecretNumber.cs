@@ -1,11 +1,12 @@
-namespace Exercises;
+using CommonInterfaces;
 
-public class Exercise315A : IExercise
+namespace Exercise315A;
+
+public class GuessSecretNumber : IExercise
 {
     public void Run()
     {
-        var random = new Random();
-        var randomNumber = random.Next(1, 100);
+        var randomNumber = GetRandomNumber();
         var count = 0;
 
         Console.WriteLine("Guess the secret number between 1 and 100 😎");
@@ -30,5 +31,12 @@ public class Exercise315A : IExercise
                 Console.WriteLine("Your guess was too low ↓ Try again!");
             }
         }
+    }
+
+    private static int GetRandomNumber()
+    {
+        var random = new Random();
+        var randomNumber = random.Next(1, 100);
+        return randomNumber;
     }
 }

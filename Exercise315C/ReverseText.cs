@@ -1,15 +1,17 @@
-namespace Exercises;
+using CommonInterfaces;
 
-public class Exercise315C : IExercise
+namespace Exercise315C;
+
+public class ReverseText : IExercise
 {
     public void Run()
     {
         Console.WriteLine("Enter a text to see what happens 😎");
         var text = Console.ReadLine();
-        Console.WriteLine(ReverseText(text));
+        Console.WriteLine(Reverse(text));
     }
 
-    private string ReverseText(string text)
+    private static string Reverse(string text)
     {
         var characters = text.ToCharArray().Reverse();
         return new string(characters.ToArray());
