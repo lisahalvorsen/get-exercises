@@ -1,10 +1,10 @@
 namespace Exercises;
 
-public class BettingSlip
+internal class BettingSlip
 {
-    private Match[] _matches;
+    private readonly Match[] _matches;
 
-    public BettingSlip(string betsText)
+    internal BettingSlip(string betsText)
     {
        var bets = betsText.Split(',');
        _matches = new Match[12];
@@ -15,7 +15,7 @@ public class BettingSlip
        }  
     }
 
-    public void AddGoal(int matchNo, bool isHomeTeam)
+    internal void AddGoal(int matchNo, bool isHomeTeam)
     {
         var selectedIndex = matchNo - 1;
         var selectedMatch = _matches[selectedIndex];
@@ -23,7 +23,7 @@ public class BettingSlip
         selectedMatch.AddGoal(command);
     }
 
-    public void ShowAllScores()
+    internal void ShowAllScores()
     {
         for (var j = 0; j< _matches.Length; j++)
         {
@@ -35,7 +35,7 @@ public class BettingSlip
         }
     }
 
-    public void ShowCorrectBets()
+    internal void ShowCorrectBets()
     {
         var correctBets = 0;
         foreach (var match in _matches)

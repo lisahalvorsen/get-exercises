@@ -1,6 +1,6 @@
 namespace Exercises;
 
-public class Match
+internal class Match
 {
     private int HomeGoals { get; set; }
     private int AwayGoals { get; set; }
@@ -11,7 +11,7 @@ public class Match
         Bet = bet;
     }
 
-    public void AddGoal(Command team)
+    internal void AddGoal(Command team)
     {
         switch (team)
         {
@@ -24,13 +24,13 @@ public class Match
         }
     }
 
-    public bool IsBetCorrect()
+    internal bool IsBetCorrect()
     {
         var result = HomeGoals == AwayGoals ? "U" : HomeGoals > AwayGoals ? "H" : "B";
         return Bet.Contains(result);
     }
 
-    public string GetScore()
+    internal string GetScore()
     {
         return HomeGoals + "-" + AwayGoals;
     }
