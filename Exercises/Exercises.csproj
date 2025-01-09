@@ -7,4 +7,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Exercise315B\Exercise315B.csproj" />
+      <ProjectReference Include="..\Exercise315C\Exercise315C.csproj" />
+      <ProjectReference Include="..\Exercise321A\Exercise321A.csproj" />
+      <ProjectReference Include="..\Exercise321B\Exercise321B.csproj" />
+      <ProjectReference Include="..\Exercise321C\Exercise321C.csproj" />
+      <ProjectReference Include="..\Exercise323A\Exercise323A.csproj" />
+      <ProjectReference Include="..\Exercise323C\Exercise323C.csproj" />
+      <ProjectReference Include="..\Exercise341A\Exercise341A.csproj" />
+    </ItemGroup>
+
 </Project>

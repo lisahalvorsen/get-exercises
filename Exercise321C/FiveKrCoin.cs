@@ -1,4 +1,4 @@
-namespace Exercises;
+namespace Exercise321C;
 
 public class FiveKrCoin : Wallet
 {

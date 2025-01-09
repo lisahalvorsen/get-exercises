@@ -1,4 +1,4 @@
-namespace Exercises;
+namespace Exercise323A;
 
 public enum Command
 {

@@ -1,10 +1,10 @@
-namespace Exercises;
+namespace Exercise323C;
 
 public class Board
 {
     private readonly Square[] _squares;
     private bool _isPlayerOne { get; set; } = true; // true = player 1, false = player 2
-    private Random _random  { get; set; } = new Random();
+    private Random Random  { get; set; } = new Random();
     public bool IsPlayerOne => _isPlayerOne;
 
     public Board()
@@ -94,7 +94,7 @@ public class Board
 
     public bool MarkRandom(bool player)
     {
-        var randomNumber = _random.Next(0, 2);
+        var randomNumber = Random.Next(0, 2);
         return randomNumber == 1;
     }
 }

@@ -1,7 +1,27 @@
-namespace Exercises;
+using CommonInterfaces;
 
-public class Exercise321B 
+namespace Exercise321B;
+
+public class Dog : IExercise
 {
+    public string Name { get; set; }
+    public string Breed { get; set; }
+    public string Gender { get; set; }
+    public int Age { get; set; }
+
+    public Dog(string name, string breed, string gender, int age)
+    {
+        Name = name;
+        Breed = breed;
+        Gender = gender;
+        Age = age;
+    }
+
+    public Dog()
+    {
+        
+    }
+
     public void Run()
     {
         var dogs = new[]
@@ -12,6 +32,7 @@ public class Exercise321B
             new Dog(name: "Bella", breed: "Poodle", gender: "Female", age: 1),
             new Dog(name: "Rocky", breed: "German Shepherd", gender: "Male", age: 5),
         };
+
 
         Console.WriteLine("To view the dogs of a specified breed, type in the breed name below:");
         var breed = Console.ReadLine();
@@ -28,27 +49,11 @@ public class Exercise321B
         }
     }
 
-    private void ShowAllDogs(Dog[] dogs)
+    private static void ShowAllDogs(Dog[] dogs)
     {
         foreach (var dog in dogs)
         {
             Console.WriteLine($"Name: {dog.Name}, Breed: {dog.Breed}, Gender: {dog.Gender}, Age: {dog.Age}");
-        }
-    }
-
-    private class Dog
-    {
-        internal string Name { get; set; }
-        internal string Breed { get; set; }
-        internal string Gender { get; set; }
-        internal int Age { get; set; }
-
-        public Dog(string name, string breed, string gender, int age)
-        {
-            Name = name;
-            Breed = breed;
-            Gender = gender;
-            Age = age;
         }
     }
 }

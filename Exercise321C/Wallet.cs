@@ -1,6 +1,8 @@
-namespace Exercises;
+using CommonInterfaces;
 
-public class Wallet
+namespace Exercise321C;
+
+public class Wallet : IExercise
 {
     public virtual int Value { get; }
     protected int Count { get; init; }
@@ -28,5 +30,20 @@ public class Wallet
         {
             Console.WriteLine($"{coin.Count} x {coin.Value}-kroninger 🪙");
         }
+    }
+
+    public void Run()
+    {
+        var wallet = new Wallet[]
+        {
+            new OneKrCoin(1),
+            new FiveKrCoin(1),
+            new TenKrCoin(1),
+            new TwentyKrCoin(1),
+        };
+
+        var totalBalance = Wallet.CalculateTotalBalance(wallet);
+        Wallet.DisplayBalance(wallet);
+        Wallet.DisplayTotalAmount(totalBalance);
     }
 }

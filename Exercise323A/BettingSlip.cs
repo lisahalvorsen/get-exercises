@@ -1,18 +1,18 @@
-namespace Exercises;
+namespace Exercise323A;
 
-internal class BettingSlip
+public class BettingSlip
 {
     private readonly Match[] _matches;
 
     internal BettingSlip(string betsText)
     {
-       var bets = betsText.Split(',');
-       _matches = new Match[12];
+        var bets = betsText.Split(',');
+        _matches = new Match[12];
        
-       for (var i = 0; i < _matches.Length; i++)
-       {
-           _matches[i] = new Match(bets[i]);
-       }  
+        for (var i = 0; i < _matches.Length; i++)
+        {
+            _matches[i] = new Match(bets[i]);
+        }  
     }
 
     internal void AddGoal(int matchNo, bool isHomeTeam)

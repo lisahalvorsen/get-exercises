@@ -1,10 +1,9 @@
-namespace Exercises;
+namespace Exercise323C;
 
 public class Square
 {
     public int Value { get; set; } // 0 = empty, 1 = player 1, 2 = player 2
-   
-
+    
     public bool IsEmptySquare()
     {
         return Value == 0;
