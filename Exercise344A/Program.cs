@@ -30,18 +30,18 @@ class Program
         
         // Demo kode:
         
-        var email = new Email(
-            "per@getacademy.no",
-            "pål@getacademy.no",
-            "Hei",
-            "Tekst...");
-
-        emailService.Send(email);
-
-        var subscription = new Subscription("Terje", "terje@getacademy.no");
-        subscriptionRepo.Save(subscription);
-
-        subscription = subscriptionRepo.Load("terje@getacademy.no");
-        Console.WriteLine(subscription);
+        // var email = new Email(
+        //     "per@getacademy.no",
+        //     "pål@getacademy.no",
+        //     "Hei",
+        //     "Tekst...");
+        //
+        // emailService.Send(email);
+        //
+        // var subscription = new Subscription("Terje", "terje@getacademy.no");
+        // subscriptionRepo.Save(subscription);
+        //
+        // subscription = subscriptionRepo.Load("terje@getacademy.no");
+        // Console.WriteLine(subscription);
     }
 }
